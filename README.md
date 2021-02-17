@@ -1,2 +1,2 @@
-# mundi
+# mudi
 Estudo do spring MVC
