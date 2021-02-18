@@ -15,7 +15,7 @@ public class HomeCrontroller {
     public String home(Model model){
         Pedido pedido = Pedido.build();
 
-        List<Pedido> pedidos = Arrays.asList(pedido);
+        List<Pedido> pedidos = Arrays.asList(pedido, pedido, pedido, pedido);
 
         model.addAttribute("pedidos", pedidos);
 
