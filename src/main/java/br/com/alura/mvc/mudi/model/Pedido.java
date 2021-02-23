@@ -1,38 +1,72 @@
 package br.com.alura.mvc.mudi.model;
 
-import lombok.Data;
-import lombok.Getter;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.math.BigDecimal;
-import java.time.LocalDate;
 
-@Data
 @Entity
 public class Pedido {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	private String nomeProduto;
+	private BigDecimal valorNegociado;
+	private LocalDate dataDaEntrega;
+	private String urlProduto;
+	private String urlImagem;
+	private String descricao;
 
-    private String nomeProduto;
-    private BigDecimal valorNegociado;
-    private LocalDate dataEntrega;
-    private String urlProduto;
-    private String urlImagem;
-    private String descricao;
+	public String getNomeProduto() {
+		return nomeProduto;
+	}
 
-    public static Pedido build() {
-        Pedido pedido = new Pedido();
-        pedido.setNomeProduto("Celular Xiaomi Note 8 64GB Rom 4GB Ram Dual Versión Global Space Black");
-        pedido.setUrlImagem("https://images-na.ssl-images-amazon.com/images/I/51wgmCYDFML._AC_SL1000_.jpg");
-        pedido.setUrlProduto("https://www.amazon.com.br/Celular-Xiaomi-Vers%C3%A3o-Global-Space/dp/B07Y9ZHLXW/ref=sr_1_2?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Xiaomi+Redmi+Note+8&qid=1613609175&sr=8-2");
-        pedido.setDescricao("Descrição qualquer do pedido");
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
+	}
 
+	public BigDecimal getValorNegociado() {
+		return valorNegociado;
+	}
 
-        return pedido;
-    }
+	public void setValorNegociado(BigDecimal valorNegociado) {
+		this.valorNegociado = valorNegociado;
+	}
+
+	public LocalDate getDataDaEntrega() {
+		return dataDaEntrega;
+	}
+
+	public void setDataDaEntrega(LocalDate dataDaEntrega) {
+		this.dataDaEntrega = dataDaEntrega;
+	}
+
+	public String getUrlProduto() {
+		return urlProduto;
+	}
+
+	public void setUrlProduto(String urlProduto) {
+		this.urlProduto = urlProduto;
+	}
+
+	public String getUrlImagem() {
+		return urlImagem;
+	}
+
+	public void setUrlImagem(String urlImagem) {
+		this.urlImagem = urlImagem;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
 }
