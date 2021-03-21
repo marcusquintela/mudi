@@ -27,7 +27,6 @@ public class PedidoController {
 	
 	@PostMapping("novo")
 	public String novo(@Valid RequisicaoNovoPedido requisicao, BindingResult result) {
-		
 		if(result.hasErrors()) {
 			return "pedido/formulario";
 		}
