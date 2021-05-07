@@ -17,12 +17,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
+//        http.authorizeRequests()
+//                .anyRequest()
+//                .authenticated()
+//            .and()
+//                .formLogin(form -> form
+//                    .loginPage("/login")
+//                    .permitAll());
+
+        http.authorizeRequests()
+                .antMatchers("/home").permitAll()
                 .anyRequest()
                 .authenticated()
-                .and()
-                .httpBasic(Customizer.withDefaults());
+            .and()
+                .httpBasic();
     }
 
     @Bean
